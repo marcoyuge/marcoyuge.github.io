@@ -1,5 +1,5 @@
 # Site settings
-title: Yu's Blog
+title: 鱼哥的博客
 SEOTitle: 鱼哥的博客 | Yu Blog
 header-img: img/home-bg.jpg
 email: fisheryu2015@hotmail.com
@@ -68,8 +68,8 @@ ga_domain: marcoyuge.GitHub.io
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "写写代码，做做设计，看看产品。世界那么大，多玩玩看看。"
-sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "记录学习，留下笔记。"
+sidebar-avatar: /img/avatar-yuge.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -82,19 +82,19 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 # Friends
 friends: [
     {
-        title: "yuge Blog",
-        href: "#"
+        title: "北京邮电大学",
+        href: "http://www.bupt.edu.cn/"
     },{
-        title: "Foo",
-        href: "#"
+        title: "Freebuf",
+        href: "http://www.freebuf.com/"
     },{
-        title: "Bar",
-        href: "#"
+        title: "安全维基",
+        href: "https://www.sec-wiki.com/"
     },{
-        title: "Example Friends",
-        href: "#"
+        title: "爱春秋",
+        href: "https://www.ichunqiu.com"
     },{
-        title: "It helps SEO",
-        href: "#"
+        title: "步行街主干道",
+        href: "https://bbs.hupu.com/bxj"
     }
 ]

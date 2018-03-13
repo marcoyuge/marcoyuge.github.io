@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      "Welcome to YUGE Blog"
+title:      "欢迎来到我的博客"
 subtitle:   " \"Hello World, Hello Blog\""
-date:       2015-01-29 12:00:00
+date:       2018-03-13 12:00:00
 author:     "Yu"
 header-img: "img/post-bg-2015.jpg"
 tags:
