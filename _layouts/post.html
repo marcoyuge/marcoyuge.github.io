@@ -111,20 +111,20 @@ layout: default
 {% if site.duoshuo_username %}
                 
                 <div id="container"></div>
-               <link rel="stylesheet" href="https://imsun.github.io/gitment/test/style.css">
+               <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
                 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
                 <script>
-var gitment = new Gitment({
-  id: '页面 ID', // 可选。默认为 location.href
-  owner: 'marcoyuge',
-  repo: 'marcoyuge.github.io',
-  oauth: {
-    client_id: '5c384d41202fe4976311',
-    client_secret: '42e7946ceaf9505864e98f8fd24aae504fda2ed2',
-  },
-})
-gitment.render('container')
-</script>
+                var gitment = new Gitment({
+                 id: '页面 ID', // 可选。默认为 location.href
+                  owner: 'marcoyuge',
+                 repo: 'marcoyuge.github.io',
+                 oauth: {
+                   client_id: '5c384d41202fe4976311',
+                   client_secret: '42e7946ceaf9505864e98f8fd24aae504fda2ed2',
+                 },
+               })
+                   gitment.render('container')
+              </script>
                 
                 {% endif %}
 
