@@ -9,63 +9,49 @@ tags:
     - 生活
 ---
 
-> “Yeah It's on. ”
+> “Hello blog！ ”
 
 
 ## 前言
 
-Yu 的 Blog 就这么开通了。
+忙活了一天，总算把博客搞定上线了。（虽然大部分都是瞎忙活）  
 
-[跳过废话，直接看技术实现 ](#build)
-
-
-
-2015 年，Yu 总算有个地方可以好好写点东西了。
-
-
-作为一个程序员， Blog 这种轮子要是挂在大众博客程序上就太没意思了。一是觉得大部分 Blog 服务都太丑，二是觉得不能随便定制不好玩。之前因为太懒没有折腾，结果就一直连个写 Blog 的地儿都没有。
-
-在玩了一段时间知乎之后，答题的快感又激起了我开博客的冲动。之前的[个人网站](http://huangxuan.me/portfolio)是作品集形式的（现在集成进来了），并不适合用来写博文，一不做二不休，花一天搞一个吧！
-
-
-<p id = "build"></p>
 ---
 
 ## 正文
 
-接下来说说搭建这个博客的技术细节。  
-
-正好之前就有关注过 [GitHub Pages](https://pages.github.com/) + [Jekyll](http://jekyllrb.com/) 快速 Building Blog 的技术方案，非常轻松时尚。
+这个博客的灵感来自于知乎上的[这个回答](https://www.zhihu.com/question/26033776/answer/35484765)。思路是用[GitHub Pages](https://pages.github.com/) + [Jekyll](http://jekyllrb.com/) 快速上线个人Blog 的技术方案。
 
 其优点非常明显：
 
 * **Markdown** 带来的优雅写作体验
 * 非常熟悉的 Git workflow ，**Git Commit 即 Blog Post**
 * 利用 GitHub Pages 的域名和免费无限空间，不用自己折腾主机
-	* 如果需要自定义域名，也只需要简单改改 DNS 加个 CNAME 就好了
+* 如果需要自定义域名，也只需要简单改改 DNS 加个 CNAME 就好了
 * Jekyll 的自定制非常容易，基本就是个模版引擎
-
-
-本来觉得最大的缺点可能是 GitHub 在国内访问起来太慢，所以第二天一起床就到 GitCafe(Chinese GitHub Copy) 迁移了一个[镜像](http://Yupro.gitcafe.io)出来，结果还是巨慢。
-
-哥哥可是个前端好嘛！ 果断开 Chrome DevTool 查了下网络请求，原来是 **pending 在了 Google Fonts** 上，页面渲染一直被阻塞到请求超时为止，难怪这么慢。  
-忍痛割爱，只好把 Web Fonts 去了（反正超时看到的也只能是 fallback ），果然一下就正常了，而且 GitHub 和 GitCafe 对比并没有感受到明显的速度差异，虽然 github 的 ping 值明显要高一些，达到了 300ms，于是用 DNSPOD 优化了一下速度。
-
 
 
 ---
 
-配置的过程中也没遇到什么坑，基本就是 Git 的流程，相当顺手
+配置的过程中基本参照网上的教程，也遇上过一些[坑教程](http://blog.csdn.net/walkerhau/article/details/77394659?utm_source=debugrun&utm_medium=referral)，写的过程不详细，一旦过程中配置错误，基本要回滚之前好几次的操作。不过这个过程也了解了不少GitHub的错误命令(mmp)  
+<div align="center"><img src="https://i.loli.net/2018/03/13/5aa7ee6479466.png" width="80%"></div>
 
-大的 Jekyll 主题上直接 fork 了 Clean Blog（这个主题也相当有名，就不多赘述了。唯一的缺点大概就是没有标签支持，于是我给它补上了。）
 
-本地调试环境需要 `gem install jekyll`，结果 rubygem 的源居然被墙了……后来手动改成了我大淘宝的镜像源才成功
+ + 安装 ruby 和 jekyll的过程十分简单，基本上是和配置 git 的 repo 同时进行，然而两边进行的都不太顺利。先是ruby装错了版本，装上了旧版本的 dev-kits 之后再**`gem install jekyll `**，才发现 Jekyll 并不支持旧版本 ruby。(????)  
+ <div  align="center">    
+<img src="https://i.loli.net/2018/03/14/5aa939f12422d.jpg" width="30%"/>
+</div>
 
-Theme 的 CSS 是基于 Bootstrap 定制的，看得不爽的地方直接在 Less 里改就好了（平时更习惯 SCSS 些），**不过其实我一直觉得 Bootstrap 在移动端的体验做得相当一般，比我在淘宝参与的团队 CSS 框架差多了……**所以为了体验，也补了不少 CSS 进去
 
-最后就进入了耗时反而最长的**做图、写字**阶段，也算是进入了**写博客**的正轨，因为是类似 Hack Day 的方式去搭这个站的，所以折腾折腾着大半夜就过去了。
++ 重新装上更新稳定版 ruby，和相关的 MSYS2+MinGW64 开发环境，才顺利装上了 Jekyll。Jekyll 主题上直接 fork 了 hux Blog 的主题，如果不需要在本地调试博客可以不用装 Jekyll。  
 
-第二天考虑中文字体的渲染，fork 了 [Type is Beautiful](http://www.typeisbeautiful.com/) 的 `font` CSS，调整了字号，适配了 Win 的渣渲染，中英文混排效果好多了。
+* 装好Jekyll之后在本地博客根目录下执行命令**`jekyll serve --watch`**就可以直接在**127.0.0.1:4000** 地址上看见自己博客的上线效果（并且支持修改后实时变化，相比把修改push到repo然后等github pages的更新更快）
+
+
+最后就在本地调试好博客，让博客正常显示就哦了。写博客需要用到[markdown](http://www.markdown.cn/)，一个相当简洁直观的从文本转到html文档的工具。  
+
+编辑markdown文档可以使用[**sublime text 3**和插件对编辑内容进行实时预览](http://blog.csdn.net/github_32886825/article/details/52930195) 
+
 
 
 ## 后记
