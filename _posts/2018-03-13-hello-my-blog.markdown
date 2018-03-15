@@ -7,8 +7,8 @@ author:     "Yu"
 header-img: "img/post-bg-2015.jpg"
 tags:
     - 生活
----
 
+---
 > “Hello blog！ ”
 
 
@@ -32,7 +32,7 @@ tags:
 
 
 
-配置的过程中基本参照网上的教程，也遇上过一些[坑教程](http://blog.csdn.net/walkerhau/article/details/77394659?utm_source=debugrun&utm_medium=referral)，写的过程不详细，一旦过程中配置错误，基本要回滚之前好几次的操作。不过这个过程也了解了不少GitHub的错误命令(mmp)  
+配置git repo的过程中基本参照网上的教程，也遇上过一些[坑教程](http://blog.csdn.net/walkerhau/article/details/77394659?utm_source=debugrun&utm_medium=referral)，写的过程不详细，一旦过程中配置错误，基本要回滚之前好几次的操作。不过这个过程也了解了不少GitHub的错误命令(mmp)  
 <div align="center"><img src="https://i.loli.net/2018/03/13/5aa7ee6479466.png" width="80%"></div>
 
 
