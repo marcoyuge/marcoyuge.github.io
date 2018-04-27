@@ -1,0 +1,75 @@
+---
+layout:     post
+title:      "starCTF的web1题"
+subtitle:   " 倒推法"
+date:       2018-04-27 
+author:     "Yu"
+header-img: "img/post-bg-2015.jpg"
+tags:
+    - 学习
+---
+##js代码
+题目给了js代码和一个可以nc连接的地址，先贴上代码看看：  
+```
+var net = require('net');
+
+flag='fake_flag';
+
+var server = net.createServer(function(socket) {
+    socket.on('data', (data) => { 
+        //m = data.toString().replace(/[\n\r]*$/, '');
+        ok = true;
+        arr = data.toString().split(' ');
+        arr = arr.map(Number);
+        if (arr.length != 5) 
+            ok = false;
+        arr1 = arr.slice(0);
+        arr1.sort();
+        for (var i=0; i<4; i++)
+            if (arr1[i+1] == arr1[i] || arr[i] < 0 || arr1[i+1] > 127)
+                ok = false;
+        arr2 = []
+        for (var i=0; i<4; i++)
+            arr2.push(arr1[i] + arr1[i+1]);
+        val = 0;
+        for (var i=0; i<4; i++)
+            val = val * 0x100 + arr2[i];
+        if (val != 0x23332333)
+            ok = false;
+        if (ok)
+            socket.write(flag+'\n');
+        else
+            socket.write('nope\n');
+    });
+    //socket.write('Echo server\r\n');
+    //socket.pipe(socket);
+});
+
+HOST = '0.0.0.0'
+PORT = 23333
+
+server.listen(PORT, HOST);
+```  
+##代码分析  
+这段js代码写了一个socket来接收用户输入，然后将data转成字符串并按空格分割开，生成arr数组然后把数组元素转成数字。从题目发现要求数组的元素要求输入的是5个不同数字，而且每个数字都要在0~127之间。
+
+arr2的处理才是重点，arr2的数组元素由arr1中的元素两两相加而得， 
+
+```
+for (var i=0; i<4; i++)
+            val = val * 0x100 + arr2[i];
+        if (val != 0x23332333)
+            ok = false;
+```  
+根据这段代码，最后val要等于0x23332333才能给出flag，于是可以想到从`val=val*0x100 + arr2[i]`入手。  
+因为arr1的元素要求小于127，所以arr2的元素必然小于254。因此arr2[3]就等于0x23332333%0x100，可以算出arr2[3]==51，从而推算出倒数第二轮循环中的val，按照同样的方法算出arr2[2]==37，arr2[1]==51,arr2[0]==37。
+然后根据
+```
+for (var i=0; i<4; i++)
+            arr2.push(arr1[i] + arr1[i+1]);
+```
+凑出arr1的5个值，发给socket就拿到flag了。
+
+
+<img src="https://i.loli.net/2018/04/27/5ae2db6c3c892.png
+" width=50%>
