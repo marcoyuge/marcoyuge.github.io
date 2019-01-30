@@ -70,5 +70,4 @@ for (var i=0; i<4; i++)
 因为arr1的元素要求小于127，所以arr2的元素必然小于254。因此arr2[3]就等于0x23332333%0x100，可以算出arr2[3]==51，从而推算出倒数第二轮循环中的val，按照同样的方法算出arr2[2]==37，arr2[1]==51,arr2[0]==37。凑出arr1的5个值，发给socket就拿到flag了。
 
 
-<img src="https://i.loli.net/2018/04/27/5ae2db6c3c892.png
-" width=50%>
+![](https://i.loli.net/2018/04/27/5ae2db6c3c892.png)
