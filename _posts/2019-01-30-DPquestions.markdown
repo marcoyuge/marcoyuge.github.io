@@ -29,7 +29,7 @@ public String longestPalindrome(String s) {
         for(int j = 0; j < len; j++){
             for(int i = 0; i <= j; i++){//这里只考虑了i<=j的情况，因为i>j时均为false
 //当i==j,j-i==1,j-i==2时，只要满足s.charAt(i) == s.charAt(j)就是回文字符串
-//如果不是这样，还要判断当前回文字符串的子串是不是回文字符串，即dp[i + 1][j - 1])，这就是动 
+//如果不是这样，还要判断当前回文字符串的子串是不是回文字符串，即dp[i + 1][j - 1])，这就是动  
 //态规划思想
                 dp[i][j] = s.charAt(i) == s.charAt(j) && (j - i <= 2 || dp[i + 1][j - 1]);
                 if(dp[i][j]){//如果是回文字符串
