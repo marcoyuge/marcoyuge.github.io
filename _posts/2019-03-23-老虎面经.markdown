@@ -1,0 +1,29 @@
+---
+layout:     post
+title:      "老虎面经"
+subtitle:   "..."
+date:       2019-03-23 
+author:     "Yu"
+header-img: "img/360.jpg"
+tags:
+    - 面经
+---
+### python
+Python 装饰器
+继承
+Init new 方法
+Dict底层实现
+垃圾回收机制
+gil
+import操作
+线程 进程 协程（2次）
+socket
+tcp握手挥手
+输入URL后浏览器怎么找到网页
+http状态码
+wsgi
+框架
+二分查找
+2
+异常处理的装饰器
+字符串找一个不重复的字符

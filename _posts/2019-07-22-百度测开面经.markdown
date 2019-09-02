@@ -1,0 +1,22 @@
+---
+layout:     post
+title:      "百度面经"
+subtitle:   "..."
+date:       2019-07-22 
+author:     "Yu"
+header-img: "img/360.jpg"
+tags:
+    - 面经
+---
+### python
+手写快排
+链表倒数第k
+反转字符串内的单词
+找最小三位数
+awk统计
+sql求总分前三的人
+身高体重的大数据分析
+大数据统计重复数
+写电梯测试用例
+HTTP请求头
+selenium找元素

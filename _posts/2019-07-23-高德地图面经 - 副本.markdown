@@ -1,0 +1,20 @@
+---
+layout:     post
+title:      "高德面经"
+subtitle:   "..."
+date:       2019-07-23 
+author:     "Yu"
+header-img: "img/360.jpg"
+tags:
+    - 面经
+---
+### python
+Python和cpp区别
+Python作用域，私有函数enumerate函数
+cpp里const作用，static作用
+析构函数为什么要是虚函数
+虚函数表
+访问网页过程
+进程通信方式
+memcpy
+字符串数字相加
