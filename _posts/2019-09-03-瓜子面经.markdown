@@ -1,0 +1,18 @@
+---
+layout:     post
+title:      "瓜子面经"
+subtitle:   "..."
+date:       2019-09-03
+author:     "Yu"
+header-img: "img/360.jpg"
+tags:
+    - 面经
+---
+
+Linux shell 统计文件行数
+堆区和栈区
+线程共享的资源
+数据库索引的原理
+一亿行查询一行需要的时间
+IP地址转换成int
+HTTPs建立

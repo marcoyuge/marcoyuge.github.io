@@ -1,0 +1,21 @@
+---
+layout:     post
+title:      "腾讯面经"
+subtitle:   "..."
+date:       2019-09-05
+author:     "Yu"
+header-img: "img/360.jpg"
+tags:
+    - 面经
+---
+
+socket编程
+进程线程区别
+堆和栈
+虚拟内存
+同步异步io
+redis
+kafka
+排查服务器问题
+可重入锁 读写锁
+单链表反转
